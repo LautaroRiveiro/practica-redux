@@ -2,17 +2,18 @@ import { applyMiddleware, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 import { EDIT_NAME } from './reducers/user.reducer'
+import logger from 'redux-logger'
 
 
 //Middlewares
-const logger = (store) => {
-  return (next) => {
-    return (action) => {
-      console.log("Ha ocurrido una nueva acción: ", action)
-      next(action)
-    }
-  }
-}
+// const logger = (store) => {
+//   return (next) => {
+//     return (action) => {
+//       console.log("Ha ocurrido una nueva acción: ", action)
+//       next(action)
+//     }
+//   }
+// }
 
 const confirmEditName = (store) => (next) => (action) => {
   if (action.type === EDIT_NAME) {
