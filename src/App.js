@@ -4,6 +4,7 @@ import Counter from './components/Counter'
 import Form from './components/Form'
 import Products from './components/Products'
 import Blog from './components/Blog'
+import Todos from './components/Todos'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Counter />
         <Form />
         <Products />
+        <Todos />
         <Blog />
       </div>
     </Provider>

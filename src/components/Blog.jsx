@@ -9,7 +9,7 @@ const Blog = ({ posts, getPosts }) => {
 
   return (
     <div className="m-auto my-2 border max-w-3xl py-2">
-
+      <h1 className="text-center mb-4">Posts [Estado array de objetos con asincronía]</h1>
       {
         posts.isFetching ? (
           <div>Cargando...</div>
@@ -18,7 +18,6 @@ const Blog = ({ posts, getPosts }) => {
             <button onClick={getPosts} className='block bg-blue-600 w-1/2 m-auto py-2 text-white'>
               Traer posts
             </button>
-            Posts:
             <ul>
               {
                 posts.posts.map((post) => (
