@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/practica-redux/static/css/main.b66082e3.css",
+    "main.js": "/practica-redux/static/js/main.23a9b001.js",
+    "static/js/787.a4df2ed6.chunk.js": "/practica-redux/static/js/787.a4df2ed6.chunk.js",
+    "index.html": "/practica-redux/index.html",
+    "main.b66082e3.css.map": "/practica-redux/static/css/main.b66082e3.css.map",
+    "main.23a9b001.js.map": "/practica-redux/static/js/main.23a9b001.js.map",
+    "787.a4df2ed6.chunk.js.map": "/practica-redux/static/js/787.a4df2ed6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b66082e3.css",
+    "static/js/main.23a9b001.js"
+  ]
+}
