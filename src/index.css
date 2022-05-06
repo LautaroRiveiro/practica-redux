@@ -9,9 +9,34 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: dodgerblue;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: gainsboro;
+}
+
+tr {
+  border-bottom: 1px solid black;
+}
+
+tr td:first-child {
+  font-weight: bold;
+}
+
+tr td:nth-child(2) {
+  padding: 0 12px;
+}
+
+.btn {
+  @apply bg-blue-600 py-1 px-4 text-white;
 }

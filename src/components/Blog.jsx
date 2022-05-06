@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { connect } from "react-redux"
 import { getPosts } from "../redux/reducers/posts.reducer"
+import Section from './Section'
 
 const Blog = ({ posts, getPosts }) => {
   useEffect(() => {
@@ -8,26 +9,25 @@ const Blog = ({ posts, getPosts }) => {
   }, [getPosts])
 
   return (
-    <div className="m-auto my-2 border max-w-3xl py-2">
-      <h1 className="text-center mb-4">Posts [Estado array de objetos con asincronía]</h1>
+    <Section title='Posts' subtitle='Estado array de objetos con asincronía'>
       {
         posts.isFetching ? (
           <div>Cargando...</div>
         ) : (
           <div>
-            <button onClick={getPosts} className='block bg-blue-600 w-1/2 m-auto py-2 text-white'>
+            <button onClick={getPosts} className='btn block m-auto w-1/2'>
               Traer posts
             </button>
-            <ul>
+            <ul className="mt-3">
               {
                 posts.posts.map((post) => (
-                  <li key={post.id}>- {post.title}</li>
+                  <li key={post.id} className='font-semibold m-1'>📰 "{post.title}"</li>
                 ))
               }
             </ul>
           </div>
         )}
-    </div>
+    </Section>
   )
 }
 

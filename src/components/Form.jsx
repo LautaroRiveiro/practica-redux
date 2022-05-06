@@ -1,23 +1,39 @@
 import { connect } from 'react-redux'
 import { editName, editAddress } from '../redux/reducers/user.reducer'
+import Section from './Section'
 
 function Form(props) {
   return (
-    <div className="m-auto my-2 border max-w-3xl py-2">
-      <h1 className='text-center mb-2'>User Form [Estado objeto]</h1>
+    <Section title='User Form' subtitle='Estado objeto'>
       <div className='flex justify-around'>
-        <div>
-          <p>Name: {props.user.name}</p>
-          <p>Email: {props.user.email}</p>
-          <p>Address: {props.user.address.street} {props.user.address.number} ({props.user.address.code})</p>
-        </div>
-        <div>
-          <input type="text" value={props.user.name} onChange={props.editName} className='block border' />
-          <br />
-          <input type="text" value={props.user.address.street} onChange={props.editAddress}  className='block border' />
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Name:</td>
+              <td>{props.user.name}</td>
+              <td><input type="text" value={props.user.name} onChange={props.editName} className='block border' /></td>
+            </tr>
+            <tr>
+              <td>Email:</td>
+              <td>{props.user.email}</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Address:</td>
+              <td>{props.user.address.street}</td>
+              <td><input type="text" value={props.user.address.street} onChange={props.editAddress} className='block border' /></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
+    </Section>
   )
 }
 
@@ -27,10 +43,10 @@ const mapStateToProps = ({ user }) => {
   }
 }
 
-const mapDispatchToProps = (dispatch)=>{
+const mapDispatchToProps = (dispatch) => {
   return {
-    editName: (e)=> dispatch(editName(e.target.value)),
-    editAddress: (e)=> dispatch(editAddress(e.target.value))
+    editName: (e) => dispatch(editName(e.target.value)),
+    editAddress: (e) => dispatch(editAddress(e.target.value))
   }
 }
 

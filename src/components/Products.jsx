@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { connect } from 'react-redux'
 import { addProduct } from '../redux/reducers/products.reducer'
+import Section from './Section'
 
 function Products({ products, addProduct }) {
   console.log(products)
@@ -12,20 +13,22 @@ function Products({ products, addProduct }) {
   }
 
   return (
-    <div className="m-auto my-2 border max-w-3xl">
-      <h1 className='text-center'>Products [Estado array]</h1>
+    <Section title='Products' subtitle='Estado array'>
       <ul>
         {
           products.map(desc => (
-            <li key={desc}>
+            <li key={desc} className='m-1'>
               {desc}
             </li>
           ))
         }
       </ul>
-      <input type="text" value={text} onChange={(e) => setText(e.target.value)} className='border' />
-      <button onClick={handleAdd}>Agregar</button>
-    </div>
+
+      <div className='flex'>
+        <input type="text" value={text} onChange={(e) => setText(e.target.value)} className='border' />
+        <button className='btn' onClick={handleAdd}>Agregar</button>
+      </div>
+    </Section>
   )
 }
 

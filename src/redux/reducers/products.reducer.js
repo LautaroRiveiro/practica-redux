@@ -9,7 +9,7 @@ export const addProduct = (name) => {
   }
 }
 
-const initState = ['Manzana', 'Banana', 'Naranja', 'Mandarina']
+const initState = ['🍎 Manzana', '🍌 Banana', '🍊 Naranja']
 
 export const products = (state = initState, action) => {
   switch (action.type) {

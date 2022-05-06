@@ -1,20 +1,20 @@
 import { connect } from "react-redux"
 import { increment, decrement } from "../redux/reducers/counter.reducer"
+import Section from './Section'
 
 function Counter({ count, increment, decrement }) {
   return (
-    <div className="m-auto my-2 border max-w-3xl text-center">
-      <h1>Counter [Estado simple]</h1>
-      <h2 className="text-2xl font-bold">{count}</h2>
-      <div>
-        <button className="bg-green-500 px-2 rounded w-10 m-1" onClick={increment}>+</button>
-        <button className="bg-red-500 px-2 rounded w-10 m-1" onClick={decrement}>-</button>
+    <Section title='Counter' subtitle='Estado simple'>
+      <h2 className="text-4xl font-bold text-center border bg-white p-2 self-center">{count}</h2>
+      <div className="text-center mt-4">
+        <button className="bg-red-500 rounded-l w-12 h-7 text-lg" onClick={decrement}>-</button>
+        <button className="bg-green-500 rounded-r w-12 h-7 text-lg" onClick={increment}>+</button>
       </div>
-    </div>
+    </Section>
   )
 }
 
-const mapStateToProps = ({counter}) => {
+const mapStateToProps = ({ counter }) => {
   return {
     count: counter
   }
